@@ -1,0 +1,30 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> BIBLIOTECA <br> FORMULARIO </h1>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+    <form action="/App1/bibliotecasFormulario" method="POST">{% csrf_token %}
+
+        <p>Ubicacion: <input type="text" name="ubicacion" </p>
+
+        <p>Asociados: <input type="number" name="nroAsociados" </p>
+
+        <table>
+
+        <input type="submit" name="ENVIAR">
+
+        </table>
+
+    </form>
+
+
+{% endblock %}
+
