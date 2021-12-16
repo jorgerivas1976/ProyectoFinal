@@ -35,3 +35,31 @@ def bibliotecasFormulario(request):
          
      
      return render(request, "App1/bibliotecasFormulario.html")
+ 
+ 
+def librosFormulario(request):
+     
+     if request.method == "POST":
+         
+         libros = Libros(genero=request.POST["genero"], nombre=request.POST["nombre"], numeroId=request.POST["numeroId"])
+         
+         libros.save()
+         
+         return render(request, "App1/inicio.html")
+         
+     
+     return render(request, "App1/librosFormulario.html")
+ 
+ 
+def asociadosFormulario(request):
+     
+     if request.method == "POST":
+         
+         asociados = Asociados(nombre=request.POST["nombre"], apellido=request.POST["apellido"], nroCarnet=request.POST["nroCarnet"], email=request.POST["email"])
+         
+         asociados.save()
+         
+         return render(request, "App1/inicio.html")
+         
+     
+     return render(request, "App1/asociadosFormulario.html")

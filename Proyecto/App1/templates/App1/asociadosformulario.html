@@ -1,0 +1,34 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> ASOCIADOS <br> FORMULARIO </h1>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+    <form action="/App1/asociadosFormulario" method="POST">{% csrf_token %}
+
+        <p>Nombre: <input type="text" name="nombre" </p>
+
+        <p>Apellido: <input type="text" name="apellido" </p>
+
+        <p>NroCarnet: <input type="number" name="nroCarnet" </p>
+
+        <p>Email: <input type="email" name="email" </p>
+
+        <table>
+
+        <input type="submit" name="ENVIAR">
+
+        </table>
+
+    </form>
+
+
+{% endblock %}
+
