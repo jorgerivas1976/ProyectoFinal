@@ -1,0 +1,29 @@
+{% extends "App1/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1">Buscando bibliotecas..</h1>
+        {% endblock %}
+
+        {% block contenido %}
+
+            <h1>Resulatado de la busqueda:</h1>
+
+            {% if bibliotecas %}
+
+                <ul>
+
+                {% for biblioteca in bibliotecas %}
+
+                <li><h6>UBICACION:</h6> {{biblioteca.ubicacion}}</li>
+                <li><h6>ASOCIADOS:</h6> {{biblioteca.nroAsociados}}</li>
+
+                {% endfor %}
+
+                </ul>
+
+            {% endif %}    
+         
+        {% endblock %}

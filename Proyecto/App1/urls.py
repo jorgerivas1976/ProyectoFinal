@@ -10,5 +10,10 @@ urlpatterns = [
  path('bibliotecasFormulario', views.bibliotecasFormulario, name="BibliotecasFormulario"),
  path('librosFormulario', views.librosFormulario, name="LibrosFormulario"),   
  path('asociadosFormulario', views.asociadosFormulario, name="AsociadosFormulario"),   
+ 
+ path('busquedaBiblioteca', views.busquedaBiblioteca),
+
+ path('buscar/', views.buscar),
+   
     
 ]

@@ -11,21 +11,21 @@
 
 {% block contenido %}
 
+    {% if miFormulario.errors %}
+
+    <p>ERROR</p>
+
+    {% endif %}
+
     <form action="/App1/asociadosFormulario" method="POST">{% csrf_token %}
-
-        <p>Nombre: <input type="text" name="nombre" </p>
-
-        <p>Apellido: <input type="text" name="apellido" </p>
-
-        <p>NroCarnet: <input type="number" name="nroCarnet" </p>
-
-        <p>Email: <input type="email" name="email" </p>
 
         <table>
 
-        <input type="submit" name="ENVIAR">
+        {{ miFormulario.as_table }}
 
         </table>
+
+        <input type="submit" value="ENVIAR">
 
     </form>
 

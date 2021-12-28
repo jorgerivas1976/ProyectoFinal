@@ -1,4 +1,5 @@
 from django import forms
+import datetime
 
 
 class BibliotecasFormulario(forms.Form):
@@ -6,12 +7,12 @@ class BibliotecasFormulario(forms.Form):
     ubicacion = forms.CharField(required=True)
     nroAsociados = forms.IntegerField()
     
-class Libros (forms.Form):
+class LibrosFormulario(forms.Form):
     genero = forms.CharField(max_length=40)
     nombre = forms.CharField(max_length=50)
     numeroId = forms.IntegerField()   
     
-class Asociados (forms.Form):
+class AsociadosFormulario(forms.Form):
     nombre = forms.CharField(max_length=50)
     apellido = forms.CharField(max_length=50)
     nroCarnet = forms.IntegerField()
