@@ -267,7 +267,7 @@ def editarAsociados(request, nombre_para_editar):
 
 
 
-#VBC
+#CBV
 #LIBROS
 class LibrosList(ListView):
     

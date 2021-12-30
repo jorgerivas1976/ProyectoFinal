@@ -32,4 +32,4 @@ Templates formularios
 Entrega final:
 API forms
 CRUD
-VBC ('libros')
+CBV ('libros')
