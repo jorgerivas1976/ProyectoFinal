@@ -7,7 +7,7 @@ class Bibliotecas (models.Model):
      
      def __str__(self):
         
-        return f"BIBLIOTECAS: {self.ubicacion} ASOCIADOS: {self.nroAsociados} "   
+        return f"BIBLIOTECAS: {self.ubicacion} \ ASOCIADOS: {self.nroAsociados}"   
 
 class Libros (models.Model):
     genero = models.CharField(max_length=40)
@@ -16,7 +16,7 @@ class Libros (models.Model):
     
     def __str__(self):
         
-        return f"GENERO: {self.genero} NOMBRE: {self.nombre} ID nro: {self.numeroId} "
+        return f"GENERO: {self.genero}  \ NOMBRE: {self.nombre} \ ID nro: {self.numeroId}"
 
 class Asociados (models.Model):
     nombre = models.CharField(max_length=50)
@@ -26,5 +26,5 @@ class Asociados (models.Model):
     
     def __str__(self):
         
-        return f"ASOCIADOS: {self.nombre} APELLIDO: {self.apellido} CARNET: {self.nroCarnet} EMAIL: {self.email} "
+        return f"ASOCIADOS: {self.nombre} \ APELLIDO: {self.apellido} \ CARNET: {self.nroCarnet} \ EMAIL: {self.email}"
 

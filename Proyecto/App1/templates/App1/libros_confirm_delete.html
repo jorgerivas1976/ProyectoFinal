@@ -1,0 +1,26 @@
+{% extends "App1/padre.html" %}
+
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> Confirma el delete</h1>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+    <form method="post"> {% csrf_token %}
+
+        Está seguro que quiere eliminar?  "{{ object }}"
+
+        <input type="submit" value="Eliminar" />
+
+    </form>
+
+         
+
+{% endblock %}

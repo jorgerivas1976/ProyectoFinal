@@ -26,10 +26,12 @@
             <ul class="sidebar-nav" style="color: gold;">
                 
                 <li class="sidebar-brand" style="color: gold;"><a href="{% url 'Inicio' %}">INICIO</a></li>
-                <li class="sidebar-nav-item" style="color: gold;"><a href= "{% url 'Bibliotecas' %}">Bibliotecas</a></li>
-                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'Libros' %}">Libros</a></li>
-                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'Asociados' %}">Asociados</a></li>
+                <li class="sidebar-nav-item" style="color: gold;"><a href= "{% url 'LeerBibliotecas' %}">Bibliotecas</a></li>
+                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'List' %}">Libros</a></li>   
+                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'LeerAsociados' %}">Asociados</a></li>
                 
+    
+
             </ul>
         </nav>
        
@@ -41,7 +43,7 @@
                 {% block contenido2 %}
                 {% endblock %}
                 
-                <h3 class="mb-5" style="color: gold;"><em> Convertite en un experto en astrofisica nuclear en una noche </em></h3>
+                <h3 class="mb-5" style="color: gold;"><em> Curso PYTHON - Proyecto final</em></h3>
                 
             </div>
         </header>

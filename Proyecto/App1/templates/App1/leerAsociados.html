@@ -1,0 +1,27 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> Socios de la BD <br> </h1>
+
+{% endblock %}
+
+{% block contenido %}
+
+{% for s in asociados %}
+
+    <li> {{ s }} </li>
+
+        <a href="{% url 'EliminarAsociados' s.nombre %}">Eliminar</a>
+        <a href="{% url 'EditarAsociados' s.nombre %}">Editar</a>      
+
+    <br>
+
+{% endfor %}
+
+<a href="{% url 'AsociadosFormulario'%}"> Agregar nuevo socio </a>
+
+
+{% endblock %}

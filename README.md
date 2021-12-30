@@ -31,5 +31,5 @@ Templates formularios
 
 Entrega final:
 API forms
-Insert 
-Buscar (busquedaBiblioteca)
+CRUD
+VBC ('libros')

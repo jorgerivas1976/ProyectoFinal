@@ -1,0 +1,36 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1" style="color: azure;">Lista de libros</h1>
+        {% endblock %}
+
+
+        {% block contenido %}
+
+          <p>LIBROS:</p> <br>
+          <ul>
+            {% for libros in object_list %}
+
+            <li>
+
+              <p>NOMBRE: {{ libros.nombre}}</p>
+              <p>
+
+              <a href="{% url 'Detail' libros.id %}">Ver más</a>
+              <a href="{% url 'Edit' libros.id %}">Editar</a>
+              <a href="{% url 'Delete' libros.id %}">Eliminar</a>
+
+            </p>
+
+            </li>
+
+            {% endfor %}
+
+
+
+          </ul>
+         
+
+        {% endblock %}

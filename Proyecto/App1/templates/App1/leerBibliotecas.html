@@ -1,0 +1,28 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> Bibliotecas de la BD <br> </h1>
+
+{% endblock %}
+
+{% block contenido %}
+
+{% for b in bibliotecas %}
+
+    <li> {{ b }} </li>
+    
+    <a href="{% url 'EliminarBibliotecas' b.ubicacion %}">Eliminar</a>
+    <a href="{% url 'EditarBibliotecas' b.ubicacion %}">Editar</a>
+         
+    <br>   
+
+{% endfor %}
+
+<a href="{% url 'BibliotecasFormulario'%}"> Agregar biblioteca </a>
+
+
+{% endblock %}
+

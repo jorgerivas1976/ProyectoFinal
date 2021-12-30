@@ -1,0 +1,26 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> LIBROS <br> FORMULARIO </h1>
+        
+{% endblock %}
+
+
+{% block contenido %}
+
+
+    <p>Genero del libro: <i> {{ libros.genero}}</i></p>
+    <p>Nombre del libro: <i> {{ libros.nombre}}</i></p>
+    <p>Numero del libro: <i> {{ libros.numeroId}}</i></p>
+
+    <p>
+
+    <a href="{% url 'List' %}">Regresar</a>
+
+    </p>
+         
+
+{% endblock %}
