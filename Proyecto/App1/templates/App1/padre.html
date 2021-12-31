@@ -32,7 +32,7 @@
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'Logout' %}">Logout</a></li>
     
                 {% if not request.user.is_authenticated %}
-                <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                <li class="sidebar-nav-item"><a href="{% url 'Login' %}">Login</a></li>
                 {% endif %} 
 
                 {% if  request.user.is_authenticated %}
