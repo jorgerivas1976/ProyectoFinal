@@ -29,8 +29,16 @@
                 <li class="sidebar-nav-item" style="color: gold;"><a href= "{% url 'LeerBibliotecas' %}">Bibliotecas</a></li>
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'List' %}">Libros</a></li>   
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'LeerAsociados' %}">Asociados</a></li>
-                
+                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'Logout' %}">Logout</a></li>
     
+                {% if not request.user.is_authenticated %}
+                <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                {% endif %} 
+
+                {% if  request.user.is_authenticated %}
+                <li class="sidebar-nav-item"><a href="">Hola, {{user.username}}</a></li>
+                {% endif %}
+
 
             </ul>
         </nav>

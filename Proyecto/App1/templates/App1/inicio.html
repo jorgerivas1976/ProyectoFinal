@@ -5,10 +5,18 @@
 {% block contenido2 %}
 
     <h1 class="mb-1" style="color: azure;"> INICIO <br> </h1>
+    
+    {% if  request.user.is_authenticated %}
+    
+    <img src="{{ avatar }}" alt="">
+    
+    {% endif %}
 
 {% endblock %}
 
 {% block contenido %}
+
+    <h3>{{ mensaje }}</h3>
 
     <h1>Inicio</h1>
 
