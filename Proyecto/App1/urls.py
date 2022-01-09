@@ -10,11 +10,15 @@ urlpatterns = [
  path('asociados', views.asociados, name="Asociados"),
  
  path('bibliotecasFormulario', views.bibliotecasFormulario, name="BibliotecasFormulario"),
- #path('librosFormulario', views.librosFormulario, name="LibrosFormulario"),   
+ path('librosFormulario', views.librosFormulario, name="LibrosFormulario"),   
  path('asociadosFormulario', views.asociadosFormulario, name="AsociadosFormulario"),   
  
  path('busquedaBiblioteca', views.busquedaBiblioteca),
  path('buscar/', views.buscar),
+ path('busquedaAsociados', views.busquedaAsociados),
+ path('buscarAsociados/', views.buscarAsociados),
+ path('busquedaLibros', views.busquedaLibros),
+ path('buscarLibros/', views.buscarLibros),
 
  path('leerBibliotecas', views.leerBibliotecas, name="LeerBibliotecas"),
  #path('leerLibros', views.leerLibros, name="LeerLibros"),

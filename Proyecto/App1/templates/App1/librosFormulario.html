@@ -1,0 +1,33 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;">LIBROS <br> FORMULARIO </h1>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+    {% if miFormulario.errors %}
+
+    <p>Error</p>
+
+    {% endif %}
+
+    <form action="/App1/librosFormulario" method="POST">{% csrf_token %}
+
+        <table>
+
+        {{ miFormulario.as_table }}
+
+        </table>
+
+        <input type="submit" name="ENVIAR">
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "App1/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1">Buscando asociados ..</h1>
+        {% endblock %}
+
+        {% block contenido %}
+
+            <h1>Resulatado de la busqueda:</h1>
+
+            {% if asociados %}
+
+                <ul>
+
+                {% for asociado in asociados %}
+
+                <li><h6>NOMBRE:</h6> {{asociado.nombre}}</li>
+                <li><h6>APELLIDO :</h6> {{asociado.apellido}}</li>
+                <li><h6>CARNET:</h6> {{asociado.nroCarnet}}</li>
+                <li><h6>EMAIL:</h6> {{asociado.email}}</li>
+
+                {% endfor %}
+
+                </ul>
+
+            {% endif %}    
+         
+        {% endblock %}

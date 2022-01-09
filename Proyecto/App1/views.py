@@ -76,34 +76,34 @@ def bibliotecasFormulario(request):
  
 
  
-#def librosFormulario(request):
+def librosFormulario(request):
      
-     #if request.method == "POST":
+     if request.method == "POST":
          
-         #miFormulario = LibrosFormulario(request.POST)
+         miFormulario = LibrosFormulario(request.POST)
          
-         #if miFormulario.is_valid():
+         if miFormulario.is_valid():
              
-             #informacion = miFormulario.cleaned_data
+             informacion = miFormulario.cleaned_data
              
-             #libro = Libros(
+             libro = Libros(
                  
-                 #genero = informacion['genero'],
-                 #nombre = informacion['nombre'],
-                 #numeroId = informacion['numeroId']
+                 genero = informacion['genero'],
+                 nombre = informacion['nombre'],
+                 numeroId = informacion['numeroId']
                 
-             #)        
+             )        
              
-             #libro.save()
+             libro.save()
              
-         #return render(request, "App1/inicio.html")
+         return render(request, "App1/inicio.html")
      
-     #else:
+     else:
          
-         #miFormulario = LibrosFormulario()
+         miFormulario = LibrosFormulario()
          
      
-     #return render(request, "App1/librosFormulario.html", {"miFormulario":miFormulario})
+     return render(request, "App1/librosFormulario.html", {"miFormulario":miFormulario})
  
 
  
@@ -137,11 +137,51 @@ def asociadosFormulario(request):
      
      return render(request, 'App1/asociadosFormulario.html', {"miFormulario":miFormulario})
  
+ #BUSQUEDA
  
- 
+def busquedaAsociados(request):
+    
+    return render(request, 'App1/busquedaAsociados.html')
+
+def busquedaLibros(request):
+    
+    return render(request, 'App1/busquedaLibros.html')
+
 def busquedaBiblioteca(request):
     
     return render(request, 'App1/busquedaBiblioteca.html')
+
+def buscarAsociados(request):
+    
+    if request.GET["apellido"]:
+        
+        apellido = request.GET["apellido"]
+        
+        asociados = Asociados.objects.filter(apellido__icontains=apellido)
+        
+        return render(request, "App1/resultadoBusquedaAsociados.html",{"apellido":apellido, "asociados":asociados})
+                 
+    else: 
+        
+        respuesta = "Por favor, ingrese los datos: "     
+    
+    return HttpResponse(respuesta)
+
+def buscarLibros(request):
+    
+    if request.GET["nombre"]:
+        
+        nombre = request.GET["nombre"]
+        
+        libros = Libros.objects.filter(nombre__icontains=nombre)
+        
+        return render(request, "App1/resultadoBusquedaLibros.html",{"nombre":nombre, "libros":libros})
+                 
+    else: 
+        
+        respuesta = "Por favor, ingrese los datos: "     
+    
+    return HttpResponse(respuesta)
 
 def buscar(request):
     
