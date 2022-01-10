@@ -1,0 +1,28 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenido2 %}
+
+    <h1 class="mb-1" style="color: azure;"> Libros de la BD <br> </h1>
+
+{% endblock %}
+
+{% block contenido %}
+
+{% for l in libros %}
+
+    <li> {{ l }} </li>
+    
+    <a href="{% url 'EliminarLibros' l.nombre %}">Eliminar</a>
+    <a href="{% url 'EditarLibros' l.nombre %}">Editar</a>
+         
+    <br>   
+
+{% endfor %}
+
+<a href="{% url 'LibrosFormulario'%}"> Agregar libro </a>
+
+
+{% endblock %}
+

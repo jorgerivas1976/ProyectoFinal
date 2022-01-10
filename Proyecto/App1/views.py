@@ -210,13 +210,13 @@ def leerBibliotecas(request):
     return render(request, "App1/leerBibliotecas.html", dir)
 
 
-#def leerLibros(request):
+def leerLibros(request):
     
-    #libros = Libros.objects.all()
+    libros = Libros.objects.all()
     
-    #dir = {"libros":libros} 
+    dir = {"libros":libros} 
     
-    #return render(request, "App1/leerLibros.html", dir)
+    return render(request, "App1/leerLibros.html", dir)
 
 
 def leerAsociados(request):
@@ -239,14 +239,14 @@ def eliminarBibliotecas(request, ubicacion_para_borrar):
     return render(request, "App1/leerBibliotecas.html", {"bibliotecas":bibliotecas})
 
 
-#def eliminarlibros(request, genero_para_borrar):
+def eliminarlibros(request, nombre_para_borrar):
     
-    #librosABorrar = Libros.objects.get(genero=genero_para_borrar)
-    #librosABorrar.delete()
+    librosABorrar = Libros.objects.get(genero=nombre_para_borrar)
+    librosABorrar.delete()
     
-    #libros = Libros.objects.all()
+    libros = Libros.objects.all()
     
-    #return render(request, "App1/leerLibros.html", {"libros":libros})
+    return render(request, "App1/leerLibros.html", {"libros":libros})
 
 
 def eliminarAsociados(request, nombre_para_borrar):
@@ -277,13 +277,13 @@ def editarBibliotecas(request, ubicacion_para_editar):
                       
             biblioteca.save() 
             
-            return render(request, 'App1/inicio.html')
+            return render(request, "App1/inicio.html")
        
     else:
         
         miFormulario = BibliotecasFormulario(initial={"ubicacion":biblioteca.ubicacion,"nroAsociados":biblioteca.nroAsociados})
  
-    return render(request, 'App1/editarBibliotecas.html',{"miFormulario":miFormulario,"ubicacion_para_editar":ubicacion_para_editar})
+    return render(request, "App1/editarBibliotecas.html",{"miFormulario":miFormulario,"ubicacion_para_editar":ubicacion_para_editar})
 
 
 def editarAsociados(request, nombre_para_editar): 
@@ -305,15 +305,40 @@ def editarAsociados(request, nombre_para_editar):
                       
             asociado.save() 
             
-            return render(request, 'App1/inicio.html')
+            return render(request, "App1/inicio.html")
        
     else:
         
         miFormulario = AsociadosFormulario(initial={"nombre":asociado.nombre,"apellido":asociado.apellido,"nroCarnet":asociado.nroCarnet,"email":asociado.email})
  
-    return render(request, 'App1/editarAsociados.html',{"miFormulario":miFormulario,"nombre_para_editar":nombre_para_editar})
+    return render(request, "App1/editarAsociados.html",{"miFormulario":miFormulario,"nombre_para_editar":nombre_para_editar})
+
+def editarLibros (request, nombre_para_editar): 
+     
+    libro = Libros.objects.get (nombre = nombre_para_editar)
 
 
+    if request.method == "POST":
+        
+        miFormulario = LibrosFormulario(request.POST)
+        
+        if miFormulario.is_valid():
+            
+            informacion = miFormulario.cleaned_data
+            
+            libro.nombre = informacion ["nombre"]
+            libro.genero = informacion ["genero"]
+            libro.numeroId = informacion ["numeroId"]
+
+            libro.save()
+            return render (request, "App1/inicio.html")
+
+    else:
+        miFormulario = LibrosFormulario(initial={"nombre":libro.nombre,"genero":libro.genero,"numeroId":libro.numeroId})
+ 
+    return render (request, "App1/editarLibros.html",{"miFormulario":miFormulario,"nombre_para_editar":nombre_para_editar})                
+    
+    
 
 #CBV
 #LIBROS

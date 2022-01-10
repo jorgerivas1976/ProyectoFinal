@@ -21,15 +21,16 @@ urlpatterns = [
  path('buscarLibros/', views.buscarLibros),
 
  path('leerBibliotecas', views.leerBibliotecas, name="LeerBibliotecas"),
- #path('leerLibros', views.leerLibros, name="LeerLibros"),
+ path('leerLibros', views.leerLibros, name="LeerLibros"),
  path('leerAsociados', views.leerAsociados, name="LeerAsociados"),
  
  path('eliminarBibliotecas/<ubicacion_para_borrar>/', views.eliminarBibliotecas, name="EliminarBibliotecas"),
- #path('eliminarLibros/<genero_para_borrar>/', views.eliminarlibros, name="EliminarLibros"),
+ path('eliminarLibros/<nombre_para_borrar>/', views.eliminarlibros, name="EliminarLibros"),
  path('eliminarAsociados/<nombre_para_borrar>/', views.eliminarAsociados, name="EliminarAsociados"),
  
  path('editarBibliotecas/<ubicacion_para_editar>/', views.editarBibliotecas, name="EditarBibliotecas"),
  path('editarAsociados/<nombre_para_editar>/', views.editarAsociados, name="EditarAsociados"),
+ path('editarLibros/<nombre_para_editar>/', views.editarLibros, name="EditarLibros"),
  
  path('libros/list', views.LibrosList.as_view(), name='List'), 
  path(r'^(?P<pk>\d+)$', views.LibrosDetalle.as_view(), name='Detail'),   
