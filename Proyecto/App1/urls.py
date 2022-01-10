@@ -44,4 +44,7 @@ urlpatterns = [
  
  path('editarPerfil', views.editarPerfil, name="EditarPerfil"),
  
+ path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
+ 
+ 
 ]

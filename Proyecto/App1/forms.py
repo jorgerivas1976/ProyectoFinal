@@ -42,3 +42,8 @@ class UserEditForm(UserCreationForm):
     class Meta:
         model = User
         fields = [ 'email', 'password1', 'password2'] 
+
+
+class AvatarFormulario(forms.Form):
+
+    imagen = forms.ImageField(required=True)

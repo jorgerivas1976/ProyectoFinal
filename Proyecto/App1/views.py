@@ -1,3 +1,4 @@
+
 from django.http import request
 
 from django.shortcuts import render
@@ -457,3 +458,51 @@ def editarPerfil(request):
         
     return render(request, "App1/editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
   
+
+@login_required
+def inicio (request):
+     
+     diccionario = {}
+     cantidadDeAvatares = 0
+
+     if request.user.is_authenticated:
+
+        avatar = Avatar.objects.filter( user = request.user.id )
+         
+        for a in avatar:
+
+             cantidadDeAvatares = cantidadDeAvatares + 1
+
+        diccionario["avatar"] = avatar[cantidadDeAvatares-1].imagen.url
+
+        
+
+     return render (request, "App1/inicio.html", diccionario)
+
+@login_required
+def agregarAvatar(request):
+     
+    
+    if request.method == 'POST':
+        
+        miFormulario = AvatarFormulario(request.POST,request.FILES)
+        
+        if miFormulario.is_valid():
+            
+            u = User.objects.get(username=request.user)
+            avatar = Avatar (user=u, imagen=miFormulario.cleaned_data['imagen'])
+            
+            avatar.save()
+            
+            return render(request, "App1/inicio.html")
+        
+    else:
+        
+        miFormulario = AvatarFormulario
+        
+        
+    return render(request, "App1/agregarAvatar.html", {"miFormulario":miFormulario})
+
+
+
+

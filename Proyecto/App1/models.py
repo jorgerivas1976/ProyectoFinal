@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Bibliotecas (models.Model):
@@ -27,4 +28,11 @@ class Asociados (models.Model):
     def __str__(self):
         
         return f"ASOCIADOS: {self.nombre} \ APELLIDO: {self.apellido} \ CARNET: {self.nroCarnet} \ EMAIL: {self.email}"
+
+
+class Avatar (models.Model):
+
+      user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+      imagen = models.ImageField(upload_to= 'avatares' , null=True , blank=True )     
 

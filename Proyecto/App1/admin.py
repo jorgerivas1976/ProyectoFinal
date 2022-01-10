@@ -9,3 +9,5 @@ admin.site.register(Bibliotecas)
 admin.site.register(Libros)
 
 admin.site.register(Asociados)
+
+admin.site.register(Avatar)
