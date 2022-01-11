@@ -1,5 +1,5 @@
 from django.urls import path
-from App1 import views
+from App1 import views 
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -46,5 +46,7 @@ urlpatterns = [
  
  path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
  
+ 
+ path('aboutUs', views.aboutUs, name="AboutUs"),
  
 ]

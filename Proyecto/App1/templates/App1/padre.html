@@ -30,7 +30,9 @@
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'List' %}">Libros</a></li>   
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'LeerAsociados' %}">Asociados</a></li>
                 <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'Logout' %}">Logout</a></li>
-    
+
+                <li class="sidebar-nav-item" style="color: gold;"><a href="{% url 'AboutUs' %}">AboutUs</a></li>
+                
                 {% if not request.user.is_authenticated %}
                 <li class="sidebar-nav-item"><a href="{% url 'Login' %}">Login</a></li>
                 {% endif %} 

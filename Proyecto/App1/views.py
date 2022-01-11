@@ -505,4 +505,7 @@ def agregarAvatar(request):
 
 
 
+def aboutUs(request):
+     
+    return render(request, "App1/aboutUs.html")
 
