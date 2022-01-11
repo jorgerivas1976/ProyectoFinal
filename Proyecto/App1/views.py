@@ -76,7 +76,7 @@ def bibliotecasFormulario(request):
      return render(request, "App1/bibliotecasFormulario.html", {"miFormulario":miFormulario})
  
 
- 
+
 def librosFormulario(request):
      
      if request.method == "POST":

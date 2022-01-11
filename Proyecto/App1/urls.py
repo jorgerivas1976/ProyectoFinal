@@ -34,7 +34,7 @@ urlpatterns = [
  
  path('libros/list', views.LibrosList.as_view(), name='List'), 
  path(r'^(?P<pk>\d+)$', views.LibrosDetalle.as_view(), name='Detail'),   
- path(r'^nuevo$', views.LibrosCreacion.as_view(), name='New'),
+ path(r'libros/^nuevo$', views.LibrosCreacion.as_view(), name='New'),
  path(r'^editar/(?P<pk>\d+)$', views.LibrosUpdate.as_view(), name='Edit'),
  path(r'^borrar/(?P<pk>\d+)$', views.LibrosDelete.as_view(), name='Delete'),
  
