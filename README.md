@@ -7,12 +7,13 @@ How to clone You can clone this repository with SourceTree by simply setting htt
 Participantes:
 
 Josefina Sureda:
-
 1ra entrega:
 App, página del tipo biblioteca con 3 modelos
 Temaplates para los modelos
 
 Entrega final:
+CRUD / CBV
+AVATAR
 
 
 José ignacio Paguegui:
@@ -24,7 +25,6 @@ Entrega final:
 
 
 Jorge Antonio Rivas:
-
 1ra entrega:
 Formularios para las 3 clases
 Templates formularios
