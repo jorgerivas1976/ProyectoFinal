@@ -33,3 +33,4 @@ Entrega final:
 API forms
 CRUD
 CBV ('libros')
+Link video https://drive.google.com/file/d/1nl2B_R_ME84osSfFQ--0vdsi745dh4KE/view
